@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import SystemSection from './components/SystemSection';
 import ComparisonSection from './components/ComparisonSection';
 import AccessSection from './components/AccessSection';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <HeroSection />
         <SystemSection />
         <ComparisonSection />
+        <ContactSection />
         <AccessSection />
       </main>
       <Footer />

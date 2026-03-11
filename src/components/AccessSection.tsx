@@ -1,9 +1,10 @@
 import React from 'react';
+import TextPressure from './TextPressure';
 
 const AccessSection: React.FC = () => {
   return (
     <section
-      id="contact"
+      id="access"
       style={{
         minHeight: '50vh',
         borderBottom: '1px solid #C7C7C7',
@@ -20,14 +21,14 @@ const AccessSection: React.FC = () => {
           minHeight: '50vh',
         }}
       >
-        {/* Cols 1-3: Section label */}
+        {/* Col 1-2: Section label */}
         <div
           style={{
-            gridColumn: 'span 3',
+            gridColumn: 'span 2',
             borderRight: '1px solid #C7C7C7',
             paddingTop: '5rem',
             paddingBottom: '5rem',
-            paddingRight: '2rem',
+            paddingRight: '1.5rem',
           }}
         >
           <span
@@ -46,10 +47,10 @@ const AccessSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Cols 4-12: CTA content */}
+        {/* Cols 3-12: CTA content */}
         <div
           style={{
-            gridColumn: 'span 9',
+            gridColumn: 'span 10',
             paddingTop: '5rem',
             paddingBottom: '5rem',
             paddingLeft: '2rem',
@@ -69,8 +70,24 @@ const AccessSection: React.FC = () => {
                 marginBottom: '2.5rem',
               }}
             >
-              Start<br />
-              Exploring.
+              <TextPressure
+                text="Start"
+                minWeight={300}
+                maxWeight={900}
+                minWidth={75}
+                maxWidth={125}
+                maxDistance={260}
+                style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+              /><br />
+              <TextPressure
+                text="Exploring."
+                minWeight={300}
+                maxWeight={900}
+                minWidth={75}
+                maxWidth={125}
+                maxDistance={260}
+                style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+              />
             </h2>
 
             <div

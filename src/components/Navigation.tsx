@@ -1,88 +1,60 @@
 import React, { useState, useEffect } from 'react';
+import { PillNav } from './PillNav';
 
-const navLinks = ['Services', 'About', 'Case Studies', 'Contact'];
+const navItems = [
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Contact', href: '#contact' },
+];
 
 const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <nav
+    <header
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
-        height: '80px',
-        zIndex: 50,
-        borderBottom: '1px solid #C7C7C7',
-        backgroundColor: scrolled ? 'rgba(227,226,222,0.95)' : 'rgba(227,226,222,0.98)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        zIndex: 100,
+        padding: '0.75rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: scrolled ? 'rgba(227,226,222,0.88)' : 'rgba(227,226,222,0)',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(199,199,199,0.6)' : '1px solid transparent',
+        transition: 'background-color 0.4s ease, border-color 0.4s ease',
+        boxSizing: 'border-box',
       }}
     >
-      <div
-        style={{
-          maxWidth: '1440px',
-          margin: '0 auto',
-          height: '100%',
-          padding: '0 2rem',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          alignItems: 'center',
-          gap: '1rem',
-        }}
-      >
-        {/* Cols 1-3: Logo */}
-        <div style={{ gridColumn: 'span 3' }}>
-          <a href="#" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
-            <img
-              src="/AAS_Brand_Logo.jpeg"
-              alt="American AI Solutions"
-              style={{ height: '56px', width: 'auto', display: 'block' }}
-            />
-          </a>
-        </div>
-
-        {/* Cols 4-9: empty */}
-        <div style={{ gridColumn: 'span 6' }} />
-
-        {/* Cols 10-12: Nav links */}
-        <div
-          style={{
-            gridColumn: 'span 3',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            gap: '2rem',
-            alignItems: 'center',
-          }}
-        >
-          {navLinks.map(link => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(' ', '-')}`}
-              style={{
-                textDecoration: 'none',
-                color: '#444343',
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                transition: 'color 0.3s linear',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#1351AA')}
-              onMouseLeave={e => (e.currentTarget.style.color = '#444343')}
-            >
-              {link}
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
+      <PillNav
+        logo={
+          <img
+            src="/AAS_Brand_Logo.jpeg"
+            alt="American AI Solutions"
+            style={{ height: '24px', width: 'auto', objectFit: 'contain', pointerEvents: 'none' }}
+          />
+        }
+        logoAlt="American AI Solutions"
+        logoHref="#"
+        items={navItems}
+        baseColor="#141414"
+        pillColor="#E3E2DE"
+        pillTextColor="#141414"
+        hoveredPillTextColor="#E3E2DE"
+        fullWidth
+      />
+    </header>
   );
 };
 

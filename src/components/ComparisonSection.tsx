@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextPressure from './TextPressure';
 
 const items = [
   {
@@ -109,14 +110,14 @@ const ComparisonSection: React.FC = () => {
           gap: '1rem',
         }}
       >
-        {/* Cols 1-3: Section label */}
+        {/* Col 1-2: Section label */}
         <div
           style={{
-            gridColumn: 'span 3',
+            gridColumn: 'span 2',
             borderRight: '1px solid #C7C7C7',
             paddingTop: '5rem',
             paddingBottom: '5rem',
-            paddingRight: '2rem',
+            paddingRight: '1.5rem',
           }}
         >
           <span
@@ -124,21 +125,22 @@ const ComparisonSection: React.FC = () => {
               position: 'sticky',
               top: '8rem',
               display: 'block',
-              fontSize: '0.75rem',
+              fontSize: '0.7rem',
               fontWeight: 700,
               color: '#7A7A7A',
               textTransform: 'uppercase',
-              letterSpacing: '0.2em',
+              letterSpacing: '0.15em',
+              lineHeight: 1.4,
             }}
           >
-            Why Different
+            Why Are We Different?
           </span>
         </div>
 
-        {/* Cols 4-12: Comparison list */}
+        {/* Cols 3-12: Comparison list */}
         <div
           style={{
-            gridColumn: 'span 9',
+            gridColumn: 'span 10',
             paddingTop: '5rem',
             paddingBottom: '5rem',
             paddingLeft: '2rem',
@@ -154,8 +156,25 @@ const ComparisonSection: React.FC = () => {
               marginBottom: '3rem',
             }}
           >
-            The Difference<br />
-            Is <span style={{ color: '#1351AA' }}>Deliberate.</span>
+            <TextPressure
+              text="The Difference"
+              minWeight={300}
+              maxWeight={900}
+              minWidth={75}
+              maxWidth={125}
+              maxDistance={240}
+              style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+            /><br />
+            {'Is '}
+            <TextPressure
+              text="Deliberate."
+              minWeight={300}
+              maxWeight={900}
+              minWidth={75}
+              maxWidth={125}
+              maxDistance={240}
+              style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit', color: '#1351AA' }}
+            />
           </h2>
 
           <div>

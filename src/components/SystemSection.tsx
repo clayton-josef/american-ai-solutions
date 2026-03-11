@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextPressure from './TextPressure';
 
 const features = [
   {
@@ -97,14 +98,14 @@ const SystemSection: React.FC = () => {
           gap: '1rem',
         }}
       >
-        {/* Cols 1-3: Section label */}
+        {/* Col 1-2: Section label */}
         <div
           style={{
-            gridColumn: 'span 3',
+            gridColumn: 'span 2',
             borderRight: '1px solid #C7C7C7',
             paddingTop: '5rem',
             paddingBottom: '5rem',
-            paddingRight: '2rem',
+            paddingRight: '1.5rem',
           }}
         >
           <span
@@ -123,10 +124,10 @@ const SystemSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Cols 4-12: Main content */}
+        {/* Cols 3-12: Main content */}
         <div
           style={{
-            gridColumn: 'span 9',
+            gridColumn: 'span 10',
             paddingTop: '5rem',
             paddingBottom: '5rem',
             paddingLeft: '2rem',
@@ -143,9 +144,33 @@ const SystemSection: React.FC = () => {
               marginBottom: '4rem',
             }}
           >
-            Precision.<br />
-            Scale.<br />
-            Impact.
+            <TextPressure
+              text="Precision."
+              minWeight={300}
+              maxWeight={900}
+              minWidth={75}
+              maxWidth={125}
+              maxDistance={240}
+              style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+            /><br />
+            <TextPressure
+              text="Scale."
+              minWeight={300}
+              maxWeight={900}
+              minWidth={75}
+              maxWidth={125}
+              maxDistance={240}
+              style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+            /><br />
+            <TextPressure
+              text="Impact."
+              minWeight={300}
+              maxWeight={900}
+              minWidth={75}
+              maxWidth={125}
+              maxDistance={240}
+              style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
+            />
           </h2>
 
           {/* 3-column feature grid */}

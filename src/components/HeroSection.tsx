@@ -1,11 +1,12 @@
 import React from 'react';
 import ShinyText from './ShinyText';
+import TextPressure from './TextPressure';
 
 const HeroSection: React.FC = () => {
   return (
     <section
       style={{
-        minHeight: '85vh',
+        minHeight: '100vh',
         borderBottom: '1px solid #C7C7C7',
         paddingTop: '80px',
       }}
@@ -15,20 +16,19 @@ const HeroSection: React.FC = () => {
           maxWidth: '1440px',
           margin: '0 auto',
           padding: '0 2rem',
-          height: '100%',
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
           gap: '1rem',
-          minHeight: 'calc(85vh - 80px)',
+          minHeight: 'calc(100vh - 80px)',
         }}
       >
-        {/* Cols 1-3: Manifesto label */}
+        {/* Col 1-2: Manifesto label */}
         <div
           style={{
-            gridColumn: 'span 3',
+            gridColumn: 'span 2',
             borderRight: '1px solid #C7C7C7',
             paddingTop: '4rem',
-            paddingRight: '2rem',
+            paddingRight: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem',
@@ -55,10 +55,10 @@ const HeroSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Cols 4-12: Hero content */}
+        {/* Cols 3-12: Hero content */}
         <div
           style={{
-            gridColumn: 'span 9',
+            gridColumn: 'span 10',
             paddingTop: '4rem',
             paddingLeft: '2rem',
             display: 'flex',
@@ -67,15 +67,29 @@ const HeroSection: React.FC = () => {
             paddingBottom: '5rem',
           }}
         >
-          {/* Company logo + ShinyText tagline */}
           <div style={{ marginBottom: '2rem' }}>
-            <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            {/* Small logo + tagline row */}
+            <div
+              style={{
+                marginBottom: '2.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1.25rem',
+              }}
+            >
               <img
                 src="/AAS_Brand_Logo.jpeg"
                 alt="American AI Solutions"
-                style={{ height: '80px', width: 'auto' }}
+                style={{ height: '52px', width: 'auto' }}
               />
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em' }}>
+              <div
+                style={{
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.25em',
+                }}
+              >
                 <ShinyText
                   text="INNOVATION THROUGH FORCE"
                   speed={4}
@@ -86,10 +100,31 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Hero headline */}
+            {/* Large company name with ShinyText */}
+            <div
+              style={{
+                marginBottom: '2rem',
+                fontSize: 'clamp(2.25rem, 5vw, 5rem)',
+                fontWeight: 900,
+                letterSpacing: '-0.03em',
+                textTransform: 'uppercase',
+                lineHeight: 1,
+              }}
+            >
+              <ShinyText
+                text="American AI Solutions"
+                speed={5}
+                color="#141414"
+                shineColor="#1351AA"
+                spread={110}
+                delay={0.5}
+              />
+            </div>
+
+            {/* Hero headline with TextPressure */}
             <h1
               style={{
-                fontSize: 'clamp(4rem, 9vw, 10rem)',
+                fontSize: 'clamp(3.5rem, 8vw, 9rem)',
                 fontWeight: 900,
                 lineHeight: 0.88,
                 letterSpacing: '-0.04em',
@@ -98,11 +133,65 @@ const HeroSection: React.FC = () => {
                 marginBottom: '3rem',
               }}
             >
-              Intelligence<br />
-              That{' '}
-              <span style={{ color: '#1351AA' }}>Drives</span>
+              <TextPressure
+                text="Intelligence"
+                minWeight={400}
+                maxWeight={900}
+                minWidth={80}
+                maxWidth={120}
+                maxDistance={260}
+                style={{
+                  fontSize: 'inherit',
+                  fontWeight: 'inherit',
+                  lineHeight: 'inherit',
+                  letterSpacing: 'inherit',
+                }}
+              />
               <br />
-              Results.
+              <TextPressure
+                text="That "
+                minWeight={400}
+                maxWeight={900}
+                minWidth={80}
+                maxWidth={120}
+                maxDistance={260}
+                style={{
+                  fontSize: 'inherit',
+                  fontWeight: 'inherit',
+                  lineHeight: 'inherit',
+                  letterSpacing: 'inherit',
+                }}
+              />
+              <TextPressure
+                text="Drives"
+                minWeight={400}
+                maxWeight={900}
+                minWidth={80}
+                maxWidth={120}
+                maxDistance={260}
+                style={{
+                  fontSize: 'inherit',
+                  fontWeight: 'inherit',
+                  lineHeight: 'inherit',
+                  letterSpacing: 'inherit',
+                  color: '#1351AA',
+                }}
+              />
+              <br />
+              <TextPressure
+                text="Results."
+                minWeight={400}
+                maxWeight={900}
+                minWidth={80}
+                maxWidth={120}
+                maxDistance={260}
+                style={{
+                  fontSize: 'inherit',
+                  fontWeight: 'inherit',
+                  lineHeight: 'inherit',
+                  letterSpacing: 'inherit',
+                }}
+              />
             </h1>
           </div>
 
