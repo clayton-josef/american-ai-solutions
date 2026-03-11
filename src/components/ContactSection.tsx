@@ -4,12 +4,12 @@ const contacts = [
   {
     name: 'Clayton Josef',
     role: 'Co-Founder',
-    email: 'claytonrjosef@gmail.com',
+    email: 'clayton@american-ai-solutions.com',
   },
   {
     name: 'Zoen Howley',
     role: 'Co-Founder',
-    email: 'xxxxxx@gmail.com',
+    email: 'zoen@american-ai-solutions.com',
   },
 ];
 
