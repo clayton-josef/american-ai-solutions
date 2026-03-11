@@ -67,24 +67,23 @@ const HeroSection: React.FC = () => {
             paddingBottom: '5rem',
           }}
         >
-          {/* Company name with ShinyText */}
+          {/* Company logo + ShinyText tagline */}
           <div style={{ marginBottom: '2rem' }}>
-            <div
-              style={{
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                marginBottom: '1.5rem',
-              }}
-            >
-              <ShinyText
-                text="AMERICAN AI SOLUTIONS"
-                speed={4}
-                color="#7A7A7A"
-                shineColor="#1351AA"
-                spread={90}
+            <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+              <img
+                src="/AAS_Brand_Logo.jpeg"
+                alt="American AI Solutions"
+                style={{ height: '80px', width: 'auto' }}
               />
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em' }}>
+                <ShinyText
+                  text="INNOVATION THROUGH FORCE"
+                  speed={4}
+                  color="#7A7A7A"
+                  shineColor="#1351AA"
+                  spread={90}
+                />
+              </div>
             </div>
 
             {/* Hero headline */}

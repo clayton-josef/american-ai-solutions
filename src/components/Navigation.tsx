@@ -40,18 +40,12 @@ const Navigation: React.FC = () => {
       >
         {/* Cols 1-3: Logo */}
         <div style={{ gridColumn: 'span 3' }}>
-          <a
-            href="#"
-            style={{
-              textDecoration: 'none',
-              color: '#141414',
-              fontWeight: 900,
-              fontSize: '0.9rem',
-              letterSpacing: '-0.02em',
-              textTransform: 'uppercase',
-            }}
-          >
-            American <span style={{ color: '#1351AA' }}>AI</span> Solutions
+          <a href="#" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+            <img
+              src="/AAS_Brand_Logo.jpeg"
+              alt="American AI Solutions"
+              style={{ height: '56px', width: 'auto', display: 'block' }}
+            />
           </a>
         </div>
 
