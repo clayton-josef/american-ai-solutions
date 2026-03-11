@@ -39,3 +39,40 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--border);
 }
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+  .section-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 1.25rem !important;
+  }
+
+  .section-sidebar {
+    display: none !important;
+  }
+
+  .section-content {
+    grid-column: 1 / -1 !important;
+    padding-left: 0 !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .hero-bottom-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .footer-links {
+    justify-content: flex-start !important;
+  }
+}

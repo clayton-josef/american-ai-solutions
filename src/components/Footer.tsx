@@ -3,6 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer
+      className="footer-grid"
       style={{
         borderTop: '1px solid #C7C7C7',
         padding: '2.5rem 2rem',
@@ -30,6 +31,7 @@ const Footer: React.FC = () => {
       <div style={{ gridColumn: 'span 4' }} />
 
       <div
+        className="footer-links"
         style={{
           gridColumn: 'span 4',
           display: 'flex',

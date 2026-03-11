@@ -11,6 +11,7 @@ const AccessSection: React.FC = () => {
       }}
     >
       <div
+        className="section-grid"
         style={{
           maxWidth: '1440px',
           margin: '0 auto',
@@ -23,6 +24,7 @@ const AccessSection: React.FC = () => {
       >
         {/* Col 1-2: Section label */}
         <div
+          className="section-sidebar"
           style={{
             gridColumn: 'span 2',
             borderRight: '1px solid #C7C7C7',
@@ -49,6 +51,7 @@ const AccessSection: React.FC = () => {
 
         {/* Cols 3-12: CTA content */}
         <div
+          className="section-content"
           style={{
             gridColumn: 'span 10',
             paddingTop: '5rem',
